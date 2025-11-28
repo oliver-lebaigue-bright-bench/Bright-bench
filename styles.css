@@ -66,9 +66,9 @@ main {
 .panel {
     background: #e0ded7;
     padding: 20px;
-    border-radius: 15px 15px 50px 50px; /* Creates an upside-down U shape at the bottom */
+    border-radius: 15px 15px 100px 100px; /* More pronounced upside-down U shape */
     width: 90%;
-    max-width: 1200px; /* Keeps it wide but not too wide on large screens */
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -94,9 +94,9 @@ main {
 /* TEAM SECTION */
 .team-container {
     display: grid;
-    grid-template-columns: 1fr 5px 1fr;
+    grid-template-columns: 1fr 100px 1fr; /* Wider middle space for the divider */
     width: 100%;
-    gap: 20px;
+    gap: 0; /* No gap since the middle is the space */
 }
 
 .oliver {
@@ -108,9 +108,7 @@ main {
 }
 
 .divider {
-    background: #333;
-    width: 2px;
-    height: 100%; /* Ensures the divider spans the full height of the team container */
+    /* No background or width styling; the space itself is the divider */
 }
 
 .gethin {
