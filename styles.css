@@ -67,12 +67,17 @@ main {
     background: #e0ded7;
     padding: 20px;
     border-radius: 15px;
-    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .panel h3 {
-    text-align: center;
     margin-top: 0;
+    margin-bottom: 20px;
 }
 
 .left .dog {
@@ -87,20 +92,25 @@ main {
 }
 
 /* TEAM SECTION */
-.team-container {
-    display: grid;
-    grid-template-columns: 1fr 5px 1fr;
+.oliver {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-.divider {
-    background: #333;
-    width: 2px;
+.gethin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .gethin h4 {
-    text-align: center;
     font-weight: bold;
-    margin-top: 40%;
+    margin: 0;
 }
 
 /* Modal Styling */
