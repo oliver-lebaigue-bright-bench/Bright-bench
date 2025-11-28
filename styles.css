@@ -66,9 +66,10 @@ main {
 .panel {
     background: #e0ded7;
     padding: 20px;
-    border-radius: 15px 15px 100px 100px; /* More pronounced upside-down U shape */
     width: 90%;
     max-width: 1200px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 40%, 75% 40%, 75% 100%, 25% 100%, 25% 40%, 0% 40%);
+    /* This creates an upside-down U shape: top flat, bottom with inward curves at 75% and 25% */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -94,29 +95,28 @@ main {
 /* TEAM SECTION */
 .team-container {
     display: grid;
-    grid-template-columns: 1fr 100px 1fr; /* Wider middle space for the divider */
+    grid-template-columns: 1fr 1fr; /* Two equal columns for the two prongs */
     width: 100%;
-    gap: 0; /* No gap since the middle is the space */
+    height: 100%; /* Fill the clipped area */
+    gap: 0;
 }
 
 .oliver {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end; /* Position at the bottom of the left prong */
     align-items: center;
     text-align: center;
-}
-
-.divider {
-    /* No background or width styling; the space itself is the divider */
+    padding: 10px;
 }
 
 .gethin {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end; /* Position at the bottom of the right prong */
     align-items: center;
     text-align: center;
+    padding: 10px;
 }
 
 .gethin h4 {
