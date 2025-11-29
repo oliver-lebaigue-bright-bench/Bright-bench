@@ -64,22 +64,25 @@ main {
 
 /* PANELS */
 .panel {
-    background: #e0ded7;
+    background: transparent; /* Changed to transparent so body background shows outside the U */
     padding: 20px;
     width: 90%;
     max-width: 1200px;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 20%, 80% 100%, 20% 100%, 0% 20%);
-    /* Adjusted for a more pronounced upside-down U shape: top flat, bottom curves inward more */
+    clip-path: polygon(0% 0%, 100% 0%, 100% 10%, 90% 100%, 10% 100%, 0% 10%); /* Adjusted for a fatter U: bottom points moved to 90% and 10% for wider base */
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 400px; /* Added min-height to ensure the shape is visible and not too squat */
+    min-height: 450px; /* Slightly increased to make the fat U more pronounced */
 }
 
 .panel h3 {
     text-align: center;
     margin-top: 0;
     margin-bottom: 20px;
+    background: white; /* Card-like background */
+    border: 2px solid #333; /* Card border */
+    padding: 15px; /* Padding for card feel */
+    border-radius: 10px; /* Rounded corners for card appearance */
 }
 
 .left .dog {
@@ -109,6 +112,9 @@ main {
     align-items: center;
     text-align: center;
     padding: 10px;
+    background: white; /* Card-like background */
+    border: 2px solid #333; /* Card border */
+    border-radius: 10px; /* Rounded corners for card appearance */
 }
 
 .gethin {
@@ -118,6 +124,9 @@ main {
     align-items: center;
     text-align: center;
     padding: 10px;
+    background: white; /* Card-like background */
+    border: 2px solid #333; /* Card border */
+    border-radius: 10px; /* Rounded corners for card appearance */
 }
 
 .gethin h4 {
