@@ -1,179 +1,140 @@
+/* GLOBAL */
 body {
     margin: 0;
-    background: #d7d3c5;
-    font-family: Georgia, serif;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f9f8f6;
     color: #333;
 }
 
 /* HEADER */
 header {
-    background: #c89b3c;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
+    padding: 20px;
+    background: #e0ded7;
+    border-bottom: 3px solid #b3b1ab;
 }
 
 .logo-area {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 }
 
 .logo {
-    width: 60px;
+    width: 50px;
+    height: auto;
 }
 
-header h1 {
-    font-size: 32px;
-    font-weight: bold;
-    margin: 0;
+.quick-links-container {
+    display: flex;
+    align-items: center;
 }
 
 .quick-links {
-    background: #e9e6df;
-    border: 2px solid #333;
-    padding: 8px 20px;
+    padding: 10px 18px;
+    background: #d4d1ca;
+    border: none;
     cursor: pointer;
-    border-radius: 10px;
-    font-size: 16px;
+    font-size: 15px;
 }
 
-/* WELCOME BANNER */
-.welcome {
-    background: #e0ded7;
-    padding: 25px;
-    text-align: center;
-    border-radius: 10px;
-    margin: 20px auto;
-    width: 90%;
-}
-
-.welcome h2 {
-    margin: 0;
-    font-size: 24px;
-}
-
-/* MAIN LAYOUT */
-main {
-    width: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
-
-/* PANEL (Upside-down U frame) */
-.panel {
-    position: relative;
-    background: #e0ded7;
-    padding: 40px 20px 60px;
-    width: 90%;
-    max-width: 1200px;
-    border-radius: 20px;
-    margin-bottom: 50px;
-    text-align: center;
-}
-
-.panel::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border: 10px solid #333;
-    border-bottom: none;                 /* removes the bottom to form upside-down U */
-    border-radius: 80px 80px 0 0;        /* smooth curved arch */
-    pointer-events: none;
-}
-
-.panel h3 {
-    margin-top: 0;
-    margin-bottom: 25px;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-/* TEAM SECTION */
-.team-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Oliver left, Gethin right */
-    width: 100%;
-    gap: 0;
-    margin-top: 40px;
-}
-
-.oliver, .gethin {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 20px;
-    text-align: center;
-}
-
-.oliver img, .gethin img {
-    width: 120px;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-.gethin h4, .oliver h4 {
-    margin: 0;
-    font-weight: bold;
-}
-
-/* Modal Styling */
+/* MODAL */
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 10;
+    padding-top: 100px;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.35);
 }
 
 .modal-content {
-    background-color: #fff;
-    margin: 15% auto;
+    background-color: #f0efec;
+    margin: auto;
     padding: 20px;
-    border-radius: 10px;
-    width: 300px;
+    border: 2px solid #b3b1ab;
+    width: 270px;
     text-align: center;
-    animation: bounceIn 0.5s ease;
-    position: relative;
-}
-
-@keyframes bounceIn {
-    0% { transform: scale(0.5); opacity: 0; }
-    50% { transform: scale(1.1); opacity: 1; }
-    100% { transform: scale(1); }
 }
 
 .close {
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    position: absolute;
-    right: 15px;
-    top: 5px;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
+    float: right;
+    font-size: 25px;
     cursor: pointer;
 }
 
-/* Modal Links */
-.modal a {
-    display: block;
-    margin: 10px 0;
-    color: #333;
-    text-decoration: none;
-    font-size: 18px;
+/* WELCOME */
+.welcome {
+    text-align: center;
+    padding: 80px 20px;
+    font-size: 22px;
+    background: #faf9f7;
 }
 
-.modal a:hover {
-    color: #007bff;
+/* UPSIDE-DOWN U PANEL */
+.panel {
+    background: #e0ded7;
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 40px 20px;
+    text-align: center;
+
+    /* Real upside-down U shape */
+    clip-path: polygon(
+        0% 0%, 100% 0%,      /* top */
+        100% 65%,            /* right inner top of leg */
+        75% 100%,            /* lower right leg */
+        25% 100%,            /* lower left leg */
+        0% 65%               /* left inner top of leg */
+    );
+}
+
+.panel h3 {
+    margin: 0 0 25px 0;
+    font-size: 28px;
+}
+
+/* TWO-LEG LAYOUT */
+.team-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* left leg, right leg */
+    width: 100%;
+    height: 100%;
+}
+
+/* LEFT LEG (Oliver) */
+.oliver {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
+}
+
+/* RIGHT LEG (Gethin) */
+.gethin {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
+}
+
+/* Text inside team cards */
+.team-container h4 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.oliver p {
+    margin: 0;
+    line-height: 1.5;
 }
